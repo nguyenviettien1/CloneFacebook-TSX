@@ -17,9 +17,9 @@ import {
   Drawer,
 } from "react-native-paper";
 import {NotificationScreen} from "./Pages/NotificationScreen";
-import {HomeStack} from "./Pages/HomeStack";
 import {SettingsStack} from "./Pages/SettingsStack";
 import {WatchScreen} from "./Pages/WatchScreen";
+import { HomeScreen } from "./Pages/HomeScreen";
 function TestScreen({ navigation }:any) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -68,7 +68,7 @@ function TabNavigator() {
         inactiveTintColor: "black",
       }}
     >
-      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Watch" component={WatchScreen} />
       <Tab.Screen name="Notification" component={NotificationScreen} />
       <Tab.Screen name="Settings" component={SettingsStack} />
@@ -77,7 +77,7 @@ function TabNavigator() {
 }
 const DrawerFull = createDrawerNavigator();
 
-function CustomDrawerContent(props) {
+function CustomDrawerContent(props:any) {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
